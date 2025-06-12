@@ -1,5 +1,5 @@
 {
-  "name": "RF generate-gltf-structure",
+  "name": "generate-gltf-structure",
   "version": "1.0.0",
   "description": "Builds a representation of the structure of a GLTF for usage with threejs",
   "author": "Rohde Fischer",
