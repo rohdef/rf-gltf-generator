@@ -5,7 +5,8 @@
   "author": "Rohde Fischer",
   "license": "ISC",
   "main": "dist/generate-gltf-structure.js",
-  "type": "commonjs",
+  "type": "module",
+  "files": ["dist"],
   "scripts": {
     "build": "tsup",
     "generate": "tsx generate-gltf-structure.ts",
