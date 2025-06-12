@@ -4,8 +4,8 @@
   "description": "Builds a representation of the structure of a GLTF for usage with threejs",
   "author": "Rohde Fischer",
   "license": "ISC",
-  "main": "generate-gltf-structure.ts",
-  "type": "module",
+  "main": "dist/generate-gltf-structure.js",
+  "type": "commonjs",
   "scripts": {
     "build": "tsup",
     "generate": "tsx generate-gltf-structure.ts",
