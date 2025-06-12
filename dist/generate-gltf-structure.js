@@ -1,4 +1,4 @@
-#!/bin/env node
+#!/usr/bin/env node
 
 // generate-gltf-structure.ts
 import * as fs from "fs";
