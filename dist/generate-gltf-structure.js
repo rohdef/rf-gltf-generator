@@ -1,3 +1,5 @@
+#!/bin/env node
+
 // generate-gltf-structure.ts
 import * as fs from "fs";
 import Path from "path";
