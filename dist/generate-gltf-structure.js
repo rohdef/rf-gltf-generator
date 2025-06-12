@@ -9,6 +9,7 @@ if (process.argv.length != 4) {
   console.error("Usage: generateClasses [gltfPath] [outputPath]");
   console.error("    [gltfPath]   - the glb/gltf file to parse");
   console.error("    [outputPath] - where to put the resulting typescript");
+  process.exit();
 }
 var gltfPath = process.argv[2];
 var outputPath = process.argv[3];
