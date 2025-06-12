@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Builds a representation of the structure of a GLTF for usage with threejs",
   "author": "Rohde Fischer",
-  "license": "ISC",
-  "main": "dist/generate-gltf-structure.js",
-  "bin": "dist/generate-gltf-structure.js",
+  "license": "MIT",
+  "bin": "./dist/generate-gltf-structure.js",
   "type": "module",
   "files": ["dist"],
   "scripts": {
