@@ -5,6 +5,7 @@
   "author": "Rohde Fischer",
   "license": "ISC",
   "main": "dist/generate-gltf-structure.js",
+  "bin": "dist/generate-gltf-structure.js",
   "type": "module",
   "files": ["dist"],
   "scripts": {
