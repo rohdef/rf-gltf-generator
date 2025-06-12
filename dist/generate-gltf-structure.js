@@ -1,5 +1,6 @@
 // generate-gltf-structure.ts
 import * as fs from "fs";
+import Path from "path";
 import { GLTFLoader } from "node-three-gltf";
 import { Group, Mesh, Object3D } from "three";
 if (process.argv.length != 2) {
@@ -13,17 +14,18 @@ parseGltf(gltfPath, outputPath);
 function parseGltf(gltfPath2, outputPath2) {
   const loader = new GLTFLoader();
   const fileData = fs.readFileSync(gltfPath2);
+  const outputFilename = Path.basename(gltfPath2);
   loader.parse(
     fileData,
     "",
-    (gltf) => dumpFile(gltf.scene, outputPath2),
+    (gltf) => dumpFile(gltf.scene, outputPath2, outputFilename),
     (err) => {
       console.error(`Could not parse input file as gltf: ${gltfPath2}`);
       console.error(err);
     }
   );
 }
-function dumpFile(obj, path) {
+function dumpFile(obj, path, outputFilename) {
   const structureCode = dumpObject3d(obj);
   const code = `import {Group, Mesh, Object3D} from "three"
 
@@ -34,7 +36,7 @@ ${structureCode}
   if (!fs.existsSync(path)) {
     fs.mkdirSync(path, { recursive: true });
   }
-  fs.writeFileSync(`${path}/GltfStructure.ts`, code);
+  fs.writeFileSync(`${path}/${outputFilename}.ts`, code);
 }
 function dumpObject3d(object3d, indent = "  ") {
   let element;
