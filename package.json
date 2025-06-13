@@ -1,10 +1,9 @@
 {
   "name": "generate-gltf-structure",
-  "version": "1.0.0",
+  "version": "1.0.21",
   "description": "Builds a representation of the structure of a GLTF for usage with threejs",
   "author": "Rohde Fischer",
   "license": "MIT",
-
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:rohdef/rf-gltf-generator-source.git"
@@ -13,17 +12,16 @@
     "url": "https://github.com/rohdef/rf-gltf-generator-source/issues"
   },
   "homepage": "https://github.com/rohdef/rf-gltf-generator",
-
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "bin": "./dist/generate-gltf-structure.js",
   "type": "module",
-
   "scripts": {
     "build": "tsup",
     "generate": "tsx generate-gltf-structure.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
   "devDependencies": {
     "@types/node": "^24.0.0",
     "@types/three": "^0.177.0",
