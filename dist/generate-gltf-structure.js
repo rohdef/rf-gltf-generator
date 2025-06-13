@@ -53,7 +53,7 @@ function dumpObject3d(object3d, indent = "    ") {
       element = `${indent}get element() { return (contained.getObjectByName("${object3d.name}") as Group) },`;
       break;
     case Mesh:
-      element = `${indent}element() { return (contained.getObjectByName("${object3d.name}") as Mesh) },`;
+      element = `${indent}get element() { return (contained.getObjectByName("${object3d.name}") as Mesh) },`;
       break;
     default:
       throw new Error(`Unsupported Object3D type: ${object3d.constructor.name} for object with name: ${object3d.name}`);

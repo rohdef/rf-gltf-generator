@@ -1,6 +1,6 @@
 {
   "name": "generate-gltf-structure",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "Builds a representation of the structure of a GLTF for usage with threejs",
   "author": "Rohde Fischer",
   "license": "MIT",
