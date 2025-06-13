@@ -17,7 +17,7 @@ parseGltf(gltfPath, outputPath);
 function parseGltf(gltfPath2, outputPath2) {
   const loader = new GLTFLoader();
   const fileData = fs.readFileSync(gltfPath2);
-  const outputFilename = Path.basename(gltfPath2);
+  const outputFilename = Path.parse(gltfPath2).name;
   loader.parse(
     fileData,
     "",

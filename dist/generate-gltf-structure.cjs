@@ -40,7 +40,7 @@ parseGltf(gltfPath, outputPath);
 function parseGltf(gltfPath2, outputPath2) {
   const loader = new import_node_three_gltf.GLTFLoader();
   const fileData = fs.readFileSync(gltfPath2);
-  const outputFilename = import_node_path.default.basename(gltfPath2);
+  const outputFilename = import_node_path.default.parse(gltfPath2).name;
   loader.parse(
     fileData,
     "",
