@@ -55,8 +55,10 @@ function dumpFile(obj, path, outputFilename) {
   const structureCode = dumpObject3d(obj);
   const code = `import {Group, Mesh, Object3D} from "three"
 
-export const GltfStructure = {
+export function GltfStructure(contained: Object3D) {
+  return {
 ${structureCode}
+  }
 }
 `;
   if (!fs.existsSync(path)) {
@@ -64,17 +66,17 @@ ${structureCode}
   }
   fs.writeFileSync(`${path}/${outputFilename}.ts`, code);
 }
-function dumpObject3d(object3d, indent = "  ") {
+function dumpObject3d(object3d, indent = "    ") {
   let element;
   switch (object3d.constructor) {
     case import_three.Object3D:
-      element = `${indent}element: (contained: Object3D) => (contained.getObjectByName("${object3d.name}") as Object3D),`;
+      element = `${indent}get element() { return (contained.getObjectByName("${object3d.name}") as Object3D) },`;
       break;
     case import_three.Group:
-      element = `${indent}element: (contained: Object3D) => (contained.getObjectByName("${object3d.name}") as Group),`;
+      element = `${indent}get element() { return (contained.getObjectByName("${object3d.name}") as Group) },`;
       break;
     case import_three.Mesh:
-      element = `${indent}element: (contained: Object3D) => (contained.getObjectByName("${object3d.name}") as Mesh),`;
+      element = `${indent}element() { return (contained.getObjectByName("${object3d.name}") as Mesh) },`;
       break;
     default:
       throw new Error(`Unsupported Object3D type: ${object3d.constructor.name} for object with name: ${object3d.name}`);
